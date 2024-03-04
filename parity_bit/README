@@ -1,0 +1,44 @@
+Parity Bit Check it's a simple and quick way to check if a message is corrupted.
+
+By counting the bits which represent "1" we can increment a "counter", if the counter is EVEN we can add (at the end of the message) an extra bit (0), if it's odd we can add (1).
+
+e.g.
+
+MESSAGE = 0 1 1 1 0 1
+
+There are 4 bit "1" => 4 is even => add 0 as extra bit
+
+MESSAGE_TO_SEND = 0 1 1 1 0 1 | 0
+
+
+
+Now, the receiver will consider as "message body" the message length -1 (because the last bit is the PARITY BIT)
+
+MESSAGE_RECEIVED = 0 1 1 1 0 1 0
+This message is 7 bits long, but the "message body" is 6 bits long.
+
+Now repeat the same couting process ("1 bits counting")
+There are 4 bit "1" => 4 is even => 0 is our parity bit
+
+
+We're gonna match now the last bit with the PARITY BIT just found
+
+If they match the message is not corrupt, oterwhise it is.
+
+
+-----------------------------------------------------------------------------
+
+DISADVANTAGES
+
+This method is not 100% reliable,here why:
+
+MESSAGE = 0 1 1 1 0 1 | 0
+4 -> "1" bits
+
+
+FAKE_GOOD_MESSAGE = 0 0 0 1 0 1 | 0
+2 -> "1" bits
+
+But the parity bit check will always pass because 4 and 2 are both even, but the message is completely different.
+Rarely this happen but just to let you know that it might happen.
+
