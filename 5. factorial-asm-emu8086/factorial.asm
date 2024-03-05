@@ -4,7 +4,6 @@ mov ax, 5 ;factorial number (!5)
 
 mov bx,0
 
-
 mov cx,ax
 dec cx 
 
@@ -17,8 +16,6 @@ cmp dx,1
 ja process:
        
 jmp end   
-
-
 
 
 process: 
