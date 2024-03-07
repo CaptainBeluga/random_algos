@@ -45,7 +45,7 @@ void sort(int a[], int &ll,int val){
 			i = i-1 < 0 ? 1 : i;
 			
 			if(max==val){
-				ll-= ll > 1 ? 1 : 0; if you want to delete the "cout"
+				ll-= ll > 1 ? 1 : 0
 			}
 			
 			else{
