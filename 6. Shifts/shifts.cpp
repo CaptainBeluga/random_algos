@@ -17,12 +17,10 @@ void shr(int arr[],int &ll, int pos,int value){
 	}
 	arr[pos] = value;
 	ll++;
-
 }
 
 
 int main(){
-	
 	int arr[] = {1,2,4,4,5};
 	int ll = sizeof(arr) / sizeof(arr[0]);
 
