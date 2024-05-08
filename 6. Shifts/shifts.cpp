@@ -11,7 +11,7 @@ void shl(int arr[],int &ll,int pos){
 
 //pos where to store the new `value` and start the RIGHT SHIFT
 void shr(int arr[],int &ll, int pos,int value){
-	for(int i=ll-1; i > pos;i--){
+	for(int i=ll-1; i >= pos;i--){
 		arr[i+1] = arr[i];
 			
 	}
